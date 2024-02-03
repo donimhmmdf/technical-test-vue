@@ -1,10 +1,9 @@
 <template>
-  <Navbar></Navbar>
   <div class="container">
     <nav class="flex p-3">
       <ol class="inline-flex items-center text-sm text-slate-500">
         <li>
-          <router-link to="/">Home</router-link>
+          <router-link to="/home">Home</router-link>
         </li>
         <li>
           <div class="flex items-center font-bold">

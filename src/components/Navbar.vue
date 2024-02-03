@@ -12,10 +12,10 @@
             <nav>
               <ul>
                 <li>
-                  <router-link class="font-semibold py-2 mx-8" to="/"
+                  <router-link class="font-semibold py-2 mx-8" to="/home"
                     >Home</router-link
                   >
-                  <router-link class="font-semibold py-2 mx-8" to="/list"
+                  <router-link class="font-semibold py-2 mx-8" to="/"
                     >List</router-link
                   >
                 </li>

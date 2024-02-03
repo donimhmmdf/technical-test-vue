@@ -1,17 +1,37 @@
 <template>
-  <Navbar></Navbar>
   <div class="container">
-    <h1>Halaman Home</h1>
+    <nav class="flex p-3">
+      <ol class="inline-flex items-center text-sm text-slate-500">
+        <li class="font-bold">
+          <router-link to="/home">Home</router-link>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg
+              class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <router-link to="/">Daftar Piutang Unit</router-link>
+          </div>
+        </li>
+      </ol>
+    </nav>
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-export default {
-  components: {
-    Navbar,
-  },
-};
+export default {};
 </script>
 
 <style></style>
