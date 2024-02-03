@@ -339,7 +339,7 @@
                   </tbody>
                 </table>
                 <div class="" v-else>
-                  <h2>Data tidak ditemukan, silahkan refresh.</h2>
+                  <h2>Data gagal diambil, silahkan refresh.</h2>
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
@@ -492,7 +492,82 @@ export default {
           tanggalLelang: "09/11/2020",
           tanggalJatuhTempo: "15/11/2020",
           tanggalLunas: "-",
+          status: "Konfirmasi Pembayaran",
+        },
+        {
+          noKewajiban: "B20116005999",
+          noPolisi: " B 2343 PB",
+          pemilik: "PT OLX",
+          peserta: "Dika",
+          nomorVA: "956210000124324",
+          hargaTerbentuk: 290000000,
+          biayaAdmin: 0,
+          ppn: 0,
+          total: 290000000,
+          tanggalLelang: "09/11/2020",
+          tanggalJatuhTempo: "15/11/2020",
+          tanggalLunas: "-",
+          status: "Konfirmasi Pembayaran",
+        },
+        {
+          noKewajiban: "B20116005012",
+          noPolisi: " Z 2343 JLP",
+          pemilik: "PT OLX",
+          peserta: "Budiman",
+          nomorVA: "95621000012452",
+          hargaTerbentuk: 190000000,
+          biayaAdmin: 0,
+          ppn: 0,
+          total: 190000000,
+          tanggalLelang: "09/11/2020",
+          tanggalJatuhTempo: "15/11/2020",
+          tanggalLunas: "14/11/2020",
+          status: "Lunas",
+        },
+        {
+          noKewajiban: "B20116005077",
+          noPolisi: " B 6543 JEP",
+          pemilik: "PT OLX",
+          peserta: "Wijaya",
+          nomorVA: "95621000012445",
+          hargaTerbentuk: 300000000,
+          biayaAdmin: 0,
+          ppn: 0,
+          total: 300000000,
+          tanggalLelang: "09/11/2020",
+          tanggalJatuhTempo: "15/11/2020",
+          tanggalLunas: "-",
           status: "Proses Pembayaran",
+        },
+        {
+          noKewajiban: "B20116005023",
+          noPolisi: " B 987 JEP",
+          pemilik: "PT OLX",
+          peserta: "Rohimat",
+          nomorVA: "95621000012459",
+          hargaTerbentuk: 100000000,
+          biayaAdmin: 0,
+          ppn: 0,
+          total: 100000000,
+          tanggalLelang: "09/11/2020",
+          tanggalJatuhTempo: "15/11/2020",
+          tanggalLunas: "-",
+          status: "Proses Pembayaran",
+        },
+        {
+          noKewajiban: "B20116005992",
+          noPolisi: " B 2957 JEP",
+          pemilik: "PT OLX",
+          peserta: "Agus",
+          nomorVA: "95621000012459",
+          hargaTerbentuk: 900000000,
+          biayaAdmin: 0,
+          ppn: 0,
+          total: 900000000,
+          tanggalLelang: "09/11/2020",
+          tanggalJatuhTempo: "15/11/2020",
+          tanggalLunas: "14/11/2020",
+          status: "Lunas",
         },
       ],
     };
@@ -579,11 +654,11 @@ export default {
                   position: "top",
                 });
               } else {
+                list.status = "Lunas";
+                list.tanggalLunas = new Date().toLocaleDateString("id-ID");
                 this.$toast.success("Pembayaran berhasil", {
                   position: "top",
                 });
-                list.status = "Lunas";
-                list.tanggalLunas = new Date().toLocaleDateString("id-ID");
               }
             }
           });
