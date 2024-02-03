@@ -437,61 +437,61 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex justify-end mt-3 mb-36">
-        <p
-          class="flex items-center mr-2 justify-items-center font-bold text-slate-500 text-md"
-        >
-          Tampilkan
-        </p>
-        <button
-          class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = 5"
-        >
-          5
-        </button>
-        <button
-          class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = 10"
-        >
-          10
-        </button>
-        <button
-          class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = 50"
-        >
-          50
-        </button>
-        <button
-          class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = 100"
-        >
-          100
-        </button>
-        <button
-          class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = 500"
-        >
-          500
-        </button>
-        <button
-          class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = this.lists.length"
-        >
-          All
-        </button>
-        <button
-          class="mr-1 py-2 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-3 bg-blue-600 rounded-xl text-white"
-          @click="prevPage"
-        >
-          Previous
-        </button>
-        <button
-          class="py-2 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-3 bg-blue-600 rounded-xl text-white"
-          @click="nextPage"
-        >
-          Next
-        </button>
+        <div class="flex justify-end mt-3 mb-36">
+          <p
+            class="flex items-center mr-2 justify-items-center font-bold text-slate-500 text-md"
+          >
+            Tampilkan
+          </p>
+          <button
+            class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
+            @click="pageSize = 5"
+          >
+            5
+          </button>
+          <button
+            class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
+            @click="pageSize = 10"
+          >
+            10
+          </button>
+          <button
+            class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
+            @click="pageSize = 50"
+          >
+            50
+          </button>
+          <button
+            class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
+            @click="pageSize = 100"
+          >
+            100
+          </button>
+          <button
+            class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
+            @click="pageSize = 500"
+          >
+            500
+          </button>
+          <button
+            class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
+            @click="pageSize = this.lists.length"
+          >
+            All
+          </button>
+          <button
+            class="mr-1 py-2 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-3 bg-blue-600 rounded-xl text-white"
+            @click="prevPage"
+          >
+            Previous
+          </button>
+          <button
+            class="py-2 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-3 bg-blue-600 rounded-xl text-white"
+            @click="nextPage"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </main>
   </div>
