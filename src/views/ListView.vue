@@ -82,6 +82,78 @@
                   </div>
 
                   <div class="font-semibold">
+                    <h2>Tanggal Lelang</h2>
+                  </div>
+                  <div class="flex">
+                    <div class="mb-4 self-start w-1/2">
+                      <label
+                        for="filterTanggalLelangMin"
+                        class="block text-sm font-medium text-gray-500"
+                        >Mulai dari</label
+                      >
+                      <input
+                        type="date"
+                        id="filterTanggalLelalngMin"
+                        name="filterTanggalLelangMin"
+                        class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                        v-model="searchKey.tanggalLelangMin"
+                      />
+                    </div>
+                    <div class="self-center ml-1">
+                      <p class="text-gray-500 font-medium">to</p>
+                    </div>
+                    <div class="mb-4 w-1/2 self-end ml-1">
+                      <label
+                        for="filterTanggalLelangMax"
+                        class="block text-sm font-medium text-gray-500"
+                        >Sampai dengan</label
+                      >
+                      <input
+                        type="date"
+                        id="filterTanggalLelangMax"
+                        name="filterTanggalLelangMax"
+                        class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                        v-model="searchKey.tanggalLelangMax"
+                      />
+                    </div>
+                  </div>
+                  <div class="font-semibold">
+                    <h2>Tanggal Jatuh Tempo</h2>
+                  </div>
+                  <div class="flex">
+                    <div class="mb-4 self-start w-1/2">
+                      <label
+                        for="filterTanggalJatohTempoMin"
+                        class="block text-sm font-medium text-gray-500"
+                        >Mulai dari</label
+                      >
+                      <input
+                        type="date"
+                        id="filterTanggalJatohTempoMin"
+                        name="filterTanggalJatohTempoMin"
+                        class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                        v-model="searchKey.tanggalJatuhTempoMin"
+                      />
+                    </div>
+                    <div class="self-center ml-1">
+                      <p class="text-gray-500 font-medium">to</p>
+                    </div>
+                    <div class="mb-4 w-1/2 self-end ml-1">
+                      <label
+                        for="filterTanggalJatohTempoMax"
+                        class="block text-sm font-medium text-gray-500"
+                        >Sampai dengan</label
+                      >
+                      <input
+                        type="date"
+                        id="filterTanggalJatohTempoMax"
+                        name="filterTanggalJatohTempoMax"
+                        class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                        v-model="searchKey.tanggalJatuhTempoMax"
+                      />
+                    </div>
+                  </div>
+                  <div class="font-semibold">
                     <h2>Tanggal Lunas</h2>
                   </div>
                   <div class="flex">
@@ -339,7 +411,7 @@
                   </tbody>
                 </table>
                 <div class="" v-else>
-                  <h2>Data gagal diambil, silahkan refresh.</h2>
+                  <h2>Data tidak ditemukan, silahkan refresh.</h2>
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
@@ -405,7 +477,7 @@
         </button>
         <button
           class="mr-1 py-1 font-semibold hover:opacity-90 transition duration-500 ease-in-out text-sm px-2 bg-blue-600 rounded-xl text-white"
-          @click="pageSize = lists.length"
+          @click="pageSize = this.lists.length"
         >
           All
         </button>
@@ -437,6 +509,10 @@ export default {
         {
           totalMin: "",
           totalMax: "",
+          tanggalLelangMin: "",
+          tanggalLelangMax: "",
+          tanggalJatuhTempoMin: "",
+          tanggalJatuhTempoMax: "",
           tanggalLunasMin: "",
           tanggalLunasMax: "",
         },
@@ -612,7 +688,33 @@ export default {
           const tanggalLunas = list.tanggalLunas;
           return tanggalLunas >= minDate && tanggalLunas <= maxDate;
         });
-        console.log(filteredData);
+      }
+      if (this.searchKey.tanggalLelangMin && this.searchKey.tanggalLelangMax) {
+        const minDate = new Date(
+          this.searchKey.tanggalLelangMin
+        ).toLocaleDateString("id-ID");
+        const maxDate = new Date(
+          this.searchKey.tanggalLelangMax
+        ).toLocaleDateString("id-ID");
+        filteredData = filteredData.filter((list) => {
+          const tanggalLelang = list.tanggalLelang;
+          return tanggalLelang >= minDate && tanggalLelang <= maxDate;
+        });
+      }
+      if (
+        this.searchKey.tanggalJatuhTempoMin &&
+        this.searchKey.tanggalJatuhTempoMax
+      ) {
+        const minDate = new Date(
+          this.searchKey.tanggalJatuhTempoMin
+        ).toLocaleDateString("id-ID");
+        const maxDate = new Date(
+          this.searchKey.tanggalJatuhTempoMax
+        ).toLocaleDateString("id-ID");
+        filteredData = filteredData.filter((list) => {
+          const tanggalJatuhTempo = list.tanggalJatuhTempo;
+          return tanggalJatuhTempo >= minDate && tanggalJatuhTempo <= maxDate;
+        });
       }
       if (this.searchKey.totalMin && this.searchKey.totalMax) {
         const minTotal = this.searchKey.totalMin;
